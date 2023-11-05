@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+ <head>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+   <title>Login</title>   
+
+ </head>
+
+<body>
+
+  <h1> Tela de Cadastro de Usuários </h1>
+  <div class="container">
+  
+  <div>   
+    <fieldset>
+    <legend><strong>Formulário</strong></legend>
+    <br>
+    <form method="POST" action="{% url 'novo-usuario' %}">
+        {% csrf_token %}
+        <label><strong>Nome&nbsp</strong></label>
+        <input type=text name="nome" placeholder="digite seu nome aqui">
+    <br>
+    <br>
+
+    <label><strong>Senha&nbsp </strong></label>   
+    <input type=password name="senha" placeholder="digite sua senha aqui">
+
+    <br>
+    <br>
+
+    <label><strong>E-mail</strong></label>   
+    <input type=email name="email" placeholder="digite seu email aqui">
+
+    <br>
+    <br>
+
+    <label><strong>Endereço</strong></label>   
+    <input type=text name="endereco" placeholder="digite seu endereço aqui">
+
+    <br>
+    <br>
+
+    <label><strong>Telefone</strong></label>   
+    <input type=telefone name="telefone" placeholder="digite seu telefone aqui">
+
+    <br>
+    <br>
+    
+    <div class="container">
+      <input type=submit value="Enviar" style="width:170px; margin-left:42px">
+    </div>
+
+    <div class="container">
+        <a href="{% url 'listar-usuarios' %}" style="width:170px; margin-left:42px; margin-top:6px">Ver Dados</a>
+    </div>
+
+    <form>
+    </fieldset>
+  </div>
+  
+ <div>
+
+ <script>
+      function listarUsuarios(){
+
+        window.location.href = "http://localhost/login_banco_dados/listar_dados_login.php";
+
+      }
+      
+</script>
+
+</body>
+
+</html>
